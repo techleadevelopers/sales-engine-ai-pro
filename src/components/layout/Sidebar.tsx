@@ -3,6 +3,7 @@ import React from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useSidebar } from "./SidebarProvider";
+import Logo from "./Logo";
 import { 
   BarChart3, 
   ChevronLeft,
@@ -74,8 +75,9 @@ const Sidebar: React.FC = () => {
               <div className="h-8 w-8 rounded-md bg-brandBlue flex items-center justify-center">
                 <Compass className="h-5 w-5 text-white" />
               </div>
-              <span className="text-lg font-semibold text-grayScale-800">SalesCompass</span>
+              <span className="text-lg font-semibold text-grayScale-800">SalesEngineAI™</span>
             </div>
+            
           ) : (
             <div className="h-8 w-8 rounded-md bg-brandBlue flex items-center justify-center">
               <Compass className="h-5 w-5 text-white" />

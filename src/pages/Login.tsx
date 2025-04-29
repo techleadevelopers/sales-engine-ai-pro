@@ -33,7 +33,7 @@ const Login: React.FC = () => {
               <div className="h-10 w-10 rounded-md bg-brandBlue flex items-center justify-center mr-3">
                 <Compass className="h-6 w-6 text-white" />
               </div>
-              <h1 className="text-2xl font-bold text-grayScale-800">SalesCompass</h1>
+              <h1 className="text-2xl font-bold text-grayScale-800">SalesEngineAI™</h1>
             </div>
             <div className="space-y-6">
               <div>
@@ -154,7 +154,7 @@ const Login: React.FC = () => {
             <div className="max-w-md text-center text-white">
               <h2 className="text-3xl font-bold">Drive your sales with data</h2>
               <p className="mt-4 text-lg">
-                SalesCompass offers an innovative approach to sales optimization, leveraging AI and analytics to boost your conversion rates.
+                SalesEngineAI™ offers an innovative approach to sales optimization, leveraging AI and analytics to boost your conversion rates.
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4 text-left">
                 <div className="flex items-center space-x-3">
