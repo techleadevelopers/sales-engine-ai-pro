@@ -158,36 +158,285 @@ GitHub Actions para lint, build, test e deploy automático.
 bash
 
 Copiar
-.
-├── frontend
-│   ├── public
-│   ├── src
-│   │   ├── components
-│   │   │   ├── layout
-│   │   │   │   ├── MainLayout.tsx
-│   │   │   │   ├── Navbar.tsx
-│   │   │   │   ├── Sidebar.tsx
-│   │   │   │   └── SidebarProvider.tsx
-│   │   │   ├── ui
-│   │   │   │   ├── button.tsx
-│   │   │   │   ├── badge.tsx
-│   │   │   │   ├── card.tsx
-│   │   │   │   ├── chart.tsx
-│   │   │   │   └── ... (outros primitives)
-│   │   ├── pages
-│   │   ├── hooks
-│   │   ├── services
-│   │   └── utils
-│   └── vite.config.ts
-├── backend
-│   ├── src
-│   │   ├── controllers
-│   │   ├── models
-│   │   ├── routes
-│   │   ├── middlewares
-│   │   └── services
-│   └── tsconfig.json
-└── README.md
+frontend/
+├── .vercel/
+├── dist/
+├── node_modules/
+├── public/
+│   └── ... (outros arquivos públicos)
+├── src/
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Logo.tsx
+│   │   │   ├── MainLayout.tsx
+│   │   │   ├── Navbar.tsx
+│   │   │   ├── Sidebar.tsx
+│   │   │   └── SidebarProvider.tsx
+│   │   └── ui/
+│   │       ├── accordion.tsx
+│   │       ├── alert-dialog.tsx
+│   │       ├── alert.tsx
+│   │       ├── aspect-ratio.tsx
+│   │       ├── avatar.tsx
+│   │       ├── badge.tsx
+│   │       ├── breadcrumb.tsx
+│   │       ├── button.tsx
+│   │       ├── calendar.tsx
+│   │       ├── card.tsx
+│   │       ├── carousel.tsx
+│   │       ├── chart.tsx
+│   │       ├── checkbox.tsx
+│   │       ├── collapsible.tsx
+│   │       ├── command.tsx
+│   │       ├── context-menu.tsx
+│   │       ├── dialog.tsx
+│   │       ├── drawer.tsx
+│   │       ├── dropdown-menu.tsx
+│   │       ├── form.tsx
+│   │       ├── hover-card.tsx
+│   │       ├── input-otp.tsx
+│   │       ├── input.tsx
+│   │       ├── label.tsx
+│   │       ├── menubar.tsx
+│   │       ├── navigation-menu.tsx
+│   │       ├── pagination.tsx
+│   │       ├── radio-group.tsx
+│   │       ├── resizable.tsx
+│   │       ├── scroll-area.tsx
+│   │       ├── select.tsx
+│   │       ├── separator.tsx
+│   │       ├── sheet.tsx
+│   │       ├── sidebar.tsx
+│   │       ├── skeleton.tsx
+│   │       ├── slider.tsx
+│   │       ├── sonner.tsx
+│   │       ├── switch.tsx
+│   │       ├── table.tsx
+│   │       ├── tabs.tsx
+│   │       ├── textarea.tsx
+│   │       ├── toast.tsx
+│   │       ├── toaster.tsx
+│   │       ├── toggle-group.tsx
+│   │       ├── toggle.tsx
+│   │       ├── tooltip.tsx
+│   │       └── use-toast.ts
+│   ├── hooks/
+│   │   ├── use-mobile.ts
+│   │   └── use-toast.ts
+│   ├── lib/
+│   │   └── utils.ts
+│   ├── pages/
+│   │   ├── Analytics.tsx
+│   │   ├── Campaigns.tsx
+│   │   ├── CRM.tsx
+│   │   ├── Dashboard.tsx
+│   │   ├── EmailMarketing.tsx
+│   │   ├── Index.tsx
+│   │   ├── LandingPage.tsx
+│   │   ├── Leads.tsx
+│   │   ├── Login.tsx
+│   │   ├── Messages.tsx
+│   │   ├── NotFound.tsx
+│   │   ├── Reports.tsx
+│   │   ├── SalesPipeline.tsx
+│   │   ├── Settings.tsx
+│   │   └── SocialMedia.tsx
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   ├── router/
+│   │   └── index.tsx
+│   ├── vite-env.d.ts
+│   └── ... (outros arquivos)
+├── .gitignore
+├── bun.lockb
+├── components.json
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
+## BACKEND
+
+backend/
+├── api-gateway/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── routers/
+│   │   ├── __init__.py
+│   │   ├── auth.py
+│   │   ├── users.py
+│   │   ├── data_connections.py
+│   │   ├── insights.py
+│   │   ├── reports.py
+│   │   ├── alerts.py
+│   ├── middleware/
+│   │   ├── __init__.py
+│   │   ├── auth_middleware.py
+│   │   ├── logging_middleware.py
+│   ├── config.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── auth-service/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── user.py
+│   │   ├── subscription.py
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   ├── user_schema.py
+│   │   ├── auth_schema.py
+│   ├── controllers/
+│   │   ├── __init__.py
+│   │   ├── auth_controller.py
+│   │   ├── user_controller.py
+│   ├── database.py
+│   ├── config.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── data-connection-service/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── connectors/
+│   │   ├── __init__.py
+│   │   ├── google_analytics_connector.py
+│   │   ├── facebook_ads_connector.py
+│   │   ├── google_ads_connector.py
+│   │   ├── search_console_connector.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── connection.py
+│   │   ├── data_source.py
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   ├── connection_schema.py
+│   ├── controllers/
+│   │   ├── __init__.py
+│   │   ├── connection_controller.py
+│   │   ├── data_collection_controller.py
+│   ├── database.py
+│   ├── config.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── data-processing-service/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── pipelines/
+│   │   ├── __init__.py
+│   │   ├── process_raw_data.py
+│   │   ├── calculate_kpis.py
+│   ├── config.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── data-storage-service/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── data_lake/
+│   │   ├── __init__.py
+│   │   ├── s3_config.py
+│   ├── nosql_db/
+│   │   ├── __init__.py
+│   │   ├── cassandra_config.py
+│   │   ├── mongo_config.py
+│   ├── data_warehouse/
+│   │   ├── __init__.py
+│   │   ├── redshift_config.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── insights-api-service/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── routers/
+│   │   ├── __init__.py
+│   │   ├── performance_insights.py
+│   │   ├── optimization_insights.py
+│   │   ├── prediction_insights.py
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   ├── insight_schema.py
+│   ├── controllers/
+│   │   ├── __init__.py
+│   │   ├── insight_controller.py
+│   ├── config.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── ai-ml-service/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── prediction_model.pkl
+│   │   ├── segmentation_model.pkl
+│   ├── algorithms/
+│   │   ├── __init__.py
+│   │   ├── prediction_algorithms.py
+│   │   ├── segmentation_algorithms.py
+│   │   ├── nlp_algorithms.py
+│   ├── data_access/
+│   │   ├── __init__.py
+│   │   ├── data_lake_access.py
+│   │   ├── data_warehouse_access.py
+│   ├── model_management/
+│   │   ├── __init__.py
+│   │   ├── model_trainer.py
+│   │   ├── model_registry.py
+│   ├── config.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── alerts-service/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── rules/
+│   │   ├── __init__.py
+│   │   ├── performance_rules.py
+│   ├── dispatchers/
+│   │   ├── __init__.py
+│   │   ├── email_dispatcher.py
+│   │   ├── slack_dispatcher.py
+│   ├── config.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── reporting-service/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── generators/
+│   │   ├── __init__.py
+│   │   ├── performance_report_generator.py
+│   │   ├── custom_report_generator.py
+│   ├── templates/
+│   │   ├── __init__.py
+│   │   ├── performance_report_template.html
+│   ├── config.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── caching-service/
+│   ├── __init__.py
+│   ├── redis_config.py
+│   ├── memcached_config.py
+├── common/
+│   ├── __init__.py
+│   ├── models.py
+│   └── utils.py
+├── docker-compose.yml
+├── message-queue-service/
+│   ├── __init__.py
+│   ├── kafka_config.py
+│   └── rabbitmq_config.py
+└── monitoring-logging-service/
+    ├── __init__.py
+    ├── logging_config.py
+    ├── metrics_config.py
+    └── prometheus_config.py
 🔌 API Reference (Endpoints Principais)
 Método	Rota	Descrição
 GET	/api/auth/me	Retorna dados do usuário autenticado
